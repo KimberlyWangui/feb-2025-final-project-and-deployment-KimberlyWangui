@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Show success message
+            // Show success message 
             alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
             
             // Reset form
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.1)';
         });
         
-        // Make cards clickable
+        // Make cards clickable 
         card.addEventListener('click', function() {
             // Get the title of the post
             const postTitle = this.querySelector('h3').textContent;
@@ -79,35 +79,41 @@ document.addEventListener('DOMContentLoaded', function() {
         const navbar = document.querySelector('.navbar');
         const navLinks = document.querySelector('.nav-links');
         
-        // Create a hamburger menu button for mobile
-        const hamburger = document.createElement('div');
-        hamburger.className = 'hamburger';
-        hamburger.innerHTML = '<span></span><span></span><span></span>';
-        
-        // Only add the hamburger and mobile functionality if screen is small
-        if (window.innerWidth <= 768) {
-            // Add hamburger if it doesn't exist
-            if (!document.querySelector('.hamburger')) {
-                navbar.appendChild(hamburger);
-                navLinks.classList.add('mobile-nav');
-                navLinks.style.display = 'none';
+        // Create a hamburger menu button for mobile if it doesn't exist
+        if (!document.querySelector('.hamburger')) {
+            const hamburger = document.createElement('div');
+            hamburger.className = 'hamburger';
+            hamburger.innerHTML = '<span></span><span></span><span></span>';
+            navbar.appendChild(hamburger);
+            
+            // Add event listener to hamburger
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
                 
-                hamburger.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    if (navLinks.style.display === 'none') {
-                        navLinks.style.display = 'flex';
-                    } else {
-                        navLinks.style.display = 'none';
-                    }
-                });
-            }
+                // Toggle nav menu visibility
+                if (navLinks.style.display === 'none' || navLinks.style.display === '') {
+                    navLinks.style.display = 'flex';
+                    navLinks.classList.add('mobile-nav');
+                } else {
+                    navLinks.style.display = 'none';
+                }
+            });
+        }
+        
+        // Set initial state based on window size
+        if (window.innerWidth <= 768) {
+            // Initially hide nav menu on mobile
+            navLinks.style.display = 'none';
+            document.querySelector('.hamburger').style.display = 'flex';
         } else {
-            // Remove hamburger if screen is large
-            const existingHamburger = document.querySelector('.hamburger');
-            if (existingHamburger) {
-                existingHamburger.remove();
-                navLinks.classList.remove('mobile-nav');
-                navLinks.style.display = 'flex';
+            // Show nav menu on desktop
+            navLinks.style.display = 'flex';
+            navLinks.classList.remove('mobile-nav');
+            
+            // Hide hamburger on desktop if it exists
+            const hamburger = document.querySelector('.hamburger');
+            if (hamburger) {
+                hamburger.style.display = 'none';
             }
         }
     };
