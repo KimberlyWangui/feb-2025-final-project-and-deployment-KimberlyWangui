@@ -3,10 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Project</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <p>If you are viewing this, then I have not yet finished working on this project, 
-        so I'm asking for time allowance probably Wednesday Midnight please to finish working on it</p>
+    
+    <!-- Navigation -->
+     <header>
+        <nav class="navbar">
+            <div class="logo">My Blog</div>
+             <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+             </ul>
+        </nav>
+     </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="display: flex; align-items: center; justify-content: center; height: 300px; background: #f5f5f5;">
+        <div class="hero-content" style="text-align: center;">
+            <h1>Welcome to My Blog</h1>
+            <p>Thoughts, Tech, and Life Experiences</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+     <main class="posts-section">
+        <h2>Recent Posts</h2>
+        <div class="posts-grid">
+
+        <!-- Post 1 -->
+         <article class="post-card">
+            <img src="Images/Blog1.jpeg" alt="Blog Post 1">
+            <div class="post-content">
+                <h3>Why I Started Blogging</h3>
+                <p>Sharing my thoughts, learning, and growth journey online...</p>
+                <span class="post-date">May 20, 2025</span>
+            </div>
+         </article>
+
+        <!-- Post 2 -->
+         <article class="post-card">
+            <img src="Images/Blog2.jpeg" alt="Blog Post 2">
+            <div class="post-content">
+                <h3>Top Tools I Use as a Student Developer</h3>
+                <p>From VS Code to Trello, here's what keeps me organized...</p>
+                <span class="post-date">May 18, 2025</span>
+            </div>
+         </article>
+
+         <!-- Post 3 -->
+         <article class="post-card" style="display: flex; flex-direction: column; align-items: center;">
+            <img src="Images/Blog3.jpeg" alt="Blog Post 3" style="align-self: center;">
+            <div class="post-content" style="text-align: center;">
+                <h3>Balancing School and Personal Projects</h3>
+                <p>Time management tips that help me stay productive and sane.</p>
+                <span class="post-date">May 15, 2025</span>
+            </div>
+         </article>
+
+        </div>
+     </main>
+
+    <!-- Footer -->
+     <footer>
+    <p>&copy; 2025 My Blog. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/kimberly-wangui-058178333/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/KimberlyWangui" target="_blank">GitHub</a>
+      <a href="wanguikimbery7@gmail.com" target="_blank">Email</a>
+    </div>
+  </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
 </body>
 </html>
